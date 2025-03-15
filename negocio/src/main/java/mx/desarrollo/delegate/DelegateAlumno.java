@@ -13,8 +13,8 @@ import mx.desarrollo.integracion.ServiceLocator;
  * @author EduardoCardona <>
  */
 public class DelegateAlumno {
-    //HOLAAAA
-    /**
+
+    /** 
      * Metodo de ejemplo para guardar Alumno
      * @param alumno de tipo usuario con id 0 para que se cree un id nuevo
      */

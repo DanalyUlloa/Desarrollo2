@@ -7,7 +7,7 @@ package mx.desarrollo.delegate;
 
 import java.util.List;
 import mx.desarrollo.entidad.Usuario;
-import mx.desarrollo.integracion.
+import mx.desarrollo.integracion.ServiceLocator;
 
 /**
  *
