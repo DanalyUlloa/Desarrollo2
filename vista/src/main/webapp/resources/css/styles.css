@@ -1,0 +1,185 @@
+/* Contenedor del menú principal */
+.menu-container {
+    width: 100%;
+    background-color: #4CAF50; /* Verde principal */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 100px; /* Altura del menú */
+    box-sizing: border-box;
+}
+
+/* Contenedor del logo (SIN fondo verde) */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Imagen del logo */
+.logo-img {
+    width: 90px; /* Ajuste del tamaño */
+    height: auto;
+}
+
+/* Título del menú */
+.menu-title {
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    flex-grow: 1;
+    white-space: nowrap;
+}
+
+/* Botón de cerrar sesión */
+.menu-logout {
+    text-align: right;
+    padding-right: 20px;
+    min-width: 150px;
+}
+
+/* Contenedor del menú de navegación */
+.submenu-container {
+    width: 100%;
+    background-color: #E8EFCF; /* Color crema del fondo del menú */
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid #4CAF50;
+}
+
+/* Elementos del menú de navegación */
+.menu-item {
+    display: flex;
+    align-items: center;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* Iconos */
+.icon {
+    width: 24px;
+    height: auto;
+    margin-right: 8px;
+}
+
+/* ---- BARRA SUPERIOR ---- */
+.top-bar {
+    display: flex;
+    flex-direction: column; /* Apila los elementos en columna */
+    align-items: flex-start;
+    background-color: #6b9b5e;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    width: 100%; /* Ocupa todo el ancho */
+}
+
+/* Estilo del botón de Inicio */
+.top-bar-link {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 15px;
+    width: 100%; /* Hace que ocupe todo el ancho */
+    background-color: #6b9b5e;
+}
+
+/* Estilo de la pestaña de Profesores (debajo de Inicio) */
+.profesores-tab {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #d9e2c4;
+    width: 100%; /* Ocupa todo el ancho */
+    padding: 12px;
+    font-weight: bold;
+    border-top: 2px solid #4b7a46;
+    border-bottom: 2px solid #4b7a46;
+}
+
+/* Iconos de la barra superior */
+.top-bar-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+/* ---- CONTENIDO PRINCIPAL ---- */
+.content-container {
+    text-align: center;
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* Título */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Cuadro gris donde se mostrarán los registros */
+.records-container {
+    background-color: #dcdcdc;
+    width: 85%;
+    height: 250px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+/* Texto de selección */
+.option-text {
+    font-size: 18px;
+    color: #333;
+}
+
+/* ---- BOTONES ---- */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Botones con iconos */
+.action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eaf7e0;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    min-width: 180px;
+}
+
+/* Asegurar que los botones mantengan su diseño */
+.action-button span {
+    margin-left: 8px; /* Espacio entre el icono y el texto */
+}
+
+/* Efecto hover */
+.action-button:hover {
+    background-color: #c8e6c9;
+}
+
+/* Iconos dentro de los botones */
+.button-icon {
+    width: 28px;
+    height: 28px;
+}

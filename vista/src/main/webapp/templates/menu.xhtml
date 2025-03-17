@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <title>Menú Principal</title>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+
+    <h:body>
+        <h:form>
+            <div class="menu-container">
+                <div class="logo-container">
+                    <h:graphicImage library="images" name="escudo-actualizado-2022.png" styleClass="logo-img"/>
+                </div>
+
+                <div class="menu-title">
+                    <h:outputText value="Universidad Autónoma de Baja California" />
+                    <br/>
+                    <h:outputText value="Facultad de Ingeniería" style="font-weight:bold;" />
+                </div>
+
+                <div class="menu-logout">
+                    <h:commandLink action="login" styleClass="menu-item">
+                        <h:graphicImage library="images" name="cerrar_sesion.png" styleClass="icon"/> Cerrar Sesión
+                    </h:commandLink>
+                </div>
+            </div>
+
+            <div class="submenu-container">
+                <h:commandLink action="profesores" styleClass="menu-item">
+                    <h:graphicImage library="images" name="profesores.png" styleClass="icon"/> Profesores
+                </h:commandLink>
+
+                <h:commandLink action="unidades" styleClass="menu-item">
+                    <h:graphicImage library="images" name="consulta.png" styleClass="icon"/> Unidades de Aprendizaje
+                </h:commandLink>
+
+                <h:commandLink action="asignaciones" styleClass="menu-item">
+                    <h:graphicImage library="images" name="asignacion.png" styleClass="icon"/> Asignaciones
+                </h:commandLink>
+            </div>
+        </h:form>
+    </h:body>
+</html>

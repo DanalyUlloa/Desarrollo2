@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              version="2.2">
+
+    <navigation-rule>
+        <from-view-id>/templates/menu.xhtml</from-view-id>
+
+        <navigation-case>
+            <from-outcome>profesores</from-outcome>
+            <to-view-id>/profesores.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+
+        <navigation-case>
+            <from-outcome>unidades</from-outcome>
+            <to-view-id>/unidades.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+
+        <navigation-case>
+            <from-outcome>asignaciones</from-outcome>
+            <to-view-id>/asignaciones.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+
+        <navigation-case>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+
+    </navigation-rule>
+
+</faces-config>
