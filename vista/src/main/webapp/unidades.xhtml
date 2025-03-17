@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <title>Unidades de Aprendizaje</title>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+
+    <h:body>
+        <!-- Barra superior -->
+        <div class="top-bar">
+            <h:link outcome="index?faces-redirect=true" styleClass="top-bar-link">
+                <h:graphicImage library="images" name="inicio.png" styleClass="top-bar-icon"/> Inicio
+            </h:link>
+
+            <div class="unidades-tab">
+                <h:graphicImage library="images" name="unidades.png" styleClass="top-bar-icon"/>
+                <span>Unidades de Aprendizaje</span>
+            </div>
+        </div>
+
+        <!-- Contenedor de contenido -->
+        <div class="content-container">
+            <h1 class="title">Unidades de Aprendizaje</h1>
+
+            <!-- Cuadro gris para los registros -->
+            <div class="records-container">
+                <h:outputText value="Selecciona una opción" styleClass="option-text"/>
+            </div>
+
+            <!-- Contenedor de botones de acción -->
+            <div class="button-container">
+                <!-- Botón de agregar unidad de aprendizaje -->
+                <p:commandButton value="Agregar Unidad de Aprendizaje" icon="pi pi-plus"
+                                 styleClass="action-button"
+                                 oncomplete="PF('dlgAgregarUnidad').show();"
+                                 update="dialogAgregarUnidad"/>
+
+                <!-- Botón de consulta general -->
+                <h:commandButton action="#{unidadBean.consultar}" styleClass="action-button">
+                    <h:graphicImage library="images" name="consulta.png" styleClass="button-icon"/>
+                    <span class="button-text">Consulta General</span>
+                </h:commandButton>
+
+                <!-- Botón de eliminar unidad de aprendizaje -->
+                <h:commandButton action="#{unidadBean.eliminar}" styleClass="action-button">
+                    <h:graphicImage library="images" name="eliminar.png" styleClass="button-icon"/>
+                    <span class="button-text">Eliminar Unidad de Aprendizaje</span>
+                </h:commandButton>
+            </div>
+        </div>
+
+        <!-- Ventana Modal para Agregar Unidad de Aprendizaje -->
+        <p:dialog id="dialogAgregarUnidad" widgetVar="dlgAgregarUnidad" header="Registro de Unidad de Aprendizaje"
+                  modal="true" resizable="false" closable="true" width="600">
+            
+            <h:form id="formUnidades">
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputLabel for="codigoUnidad" value="Código Unidad:"/>
+                    <p:inputText id="codigoUnidad" value="#{unidadBean.unidad.codigo}"/>
+
+                    <h:outputLabel for="nombreUnidad" value="Nombre de la Unidad:"/>
+                    <p:inputText id="nombreUnidad" value="#{unidadBean.unidad.nombre}"/>
+
+                    <h:outputLabel for="descripcionUnidad" value="Descripción:"/>
+                    <p:inputTextarea id="descripcionUnidad" value="#{unidadBean.unidad.descripcion}"/>
+                </h:panelGrid>
+                
+                <br/>
+
+                <p:commandButton value="Guardar" icon="pi pi-check"
+                                 action="#{unidadBean.guardarUnidad}"
+                                 update="formUnidades dialogAgregarUnidad"
+                                 oncomplete="PF('dlgAgregarUnidad').hide();"/>
+
+                <p:commandButton value="Atrás" icon="pi pi-arrow-left"
+                                 onclick="PF('dlgAgregarUnidad').hide();" 
+                                 style="margin-left:10px;"/>
+            </h:form>
+        </p:dialog>
+
+    </h:body>
+</html>

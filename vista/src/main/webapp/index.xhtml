@@ -4,6 +4,9 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+<<<<<<< Updated upstream
           
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
@@ -57,3 +60,44 @@
     </style>
 </html>
 
+=======
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <h:head>
+        <title>Inicio</title>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    
+    <h:body>
+        <!-- Incluir menú -->
+        <ui:include src="/templates/menu.xhtml"/>
+
+        <!-- Mostrar la tabla solo si el usuario está autenticado -->
+        <h:panelGroup rendered="#{not empty loginUI.usuario and loginUI.usuario.idAlumno != null}">
+    <p:panelGrid class="txt">
+        <f:facet name="header">  
+            <p:row>
+                <p:column colspan="7">
+                    <p:graphicImage name="user.png" library="images" class="logo"/>
+                </p:column>
+            </p:row>
+        </f:facet>
+        <p:row>
+            <p:column styleClass="celda">Nombre:</p:column>
+            <p:column><h:outputText value="#{loginUI.usuario.idAlumno.nombre}" /></p:column>
+        </p:row>
+        <p:row>
+            <p:column styleClass="celda">Apellido:</p:column>
+            <p:column><h:outputText value="#{loginUI.usuario.idAlumno.apellidos}" /></p:column>
+        </p:row>
+        <p:row>
+            <p:column styleClass="celda">Matrícula:</p:column>
+            <p:column><h:outputText value="#{loginUI.usuario.idAlumno.matricula}" /></p:column>
+        </p:row>
+    </p:panelGrid>
+</h:panelGroup>
+
+    </h:body>
+</html>
+>>>>>>> Stashed changes
