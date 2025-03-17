@@ -1,17 +1,7 @@
-<<<<<<< Updated upstream
-C:\Users\Usuario X\Desktop\Desarrollo\Desarrollo2\persistencia\src\main\java\mx\desarrollo\persistencia\AbstractDAO.java
-C:\Users\Usuario X\Desktop\Desarrollo\Desarrollo2\persistencia\src\main\java\mx\desarrollo\DAO\UsuarioDAO.java
-C:\Users\Usuario X\Desktop\Desarrollo\Desarrollo2\persistencia\src\main\java\mx\desarrollo\integracion\ServiceLocator.java
-C:\Users\Usuario X\Desktop\Desarrollo\Desarrollo2\persistencia\src\main\java\mx\desarrollo\persistencia\InterfaceDAO.java
-C:\Users\Usuario X\Desktop\Desarrollo\Desarrollo2\persistencia\src\main\java\test\test.java
-C:\Users\Usuario X\Desktop\Desarrollo\Desarrollo2\persistencia\src\main\java\mx\desarrollo\DAO\AlumnoDAO.java
-C:\Users\Usuario X\Desktop\Desarrollo\Desarrollo2\persistencia\src\main\java\mx\desarrollo\persistencia\HibernateUtil.java
-=======
-C:\Users\Usuario X\Desktop\Desarrollo\persistencia\src\main\java\mx\desarrollo\integracion\ServiceLocator.java
-C:\Users\Usuario X\Desktop\Desarrollo\persistencia\src\main\java\mx\desarrollo\persistencia\AbstractDAO.java
-C:\Users\Usuario X\Desktop\Desarrollo\persistencia\src\main\java\mx\desarrollo\DAO\UsuarioDAO.java
-C:\Users\Usuario X\Desktop\Desarrollo\persistencia\src\main\java\test\test.java
-C:\Users\Usuario X\Desktop\Desarrollo\persistencia\src\main\java\mx\desarrollo\persistencia\HibernateUtil.java
-C:\Users\Usuario X\Desktop\Desarrollo\persistencia\src\main\java\mx\desarrollo\persistencia\InterfaceDAO.java
-C:\Users\Usuario X\Desktop\Desarrollo\persistencia\src\main\java\mx\desarrollo\DAO\AlumnoDAO.java
->>>>>>> Stashed changes
+C:\Users\Usuario X\Desktop\Desarrollo\Desarrollo\persistencia\src\main\java\test\test.java
+C:\Users\Usuario X\Desktop\Desarrollo\Desarrollo\persistencia\src\main\java\mx\desarrollo\persistencia\AbstractDAO.java
+C:\Users\Usuario X\Desktop\Desarrollo\Desarrollo\persistencia\src\main\java\mx\desarrollo\DAO\UsuarioDAO.java
+C:\Users\Usuario X\Desktop\Desarrollo\Desarrollo\persistencia\src\main\java\mx\desarrollo\DAO\AlumnoDAO.java
+C:\Users\Usuario X\Desktop\Desarrollo\Desarrollo\persistencia\src\main\java\mx\desarrollo\persistencia\InterfaceDAO.java
+C:\Users\Usuario X\Desktop\Desarrollo\Desarrollo\persistencia\src\main\java\mx\desarrollo\integracion\ServiceLocator.java
+C:\Users\Usuario X\Desktop\Desarrollo\Desarrollo\persistencia\src\main\java\mx\desarrollo\persistencia\HibernateUtil.java
