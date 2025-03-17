@@ -4,6 +4,7 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>mx.desarrollo.entidad.Usuario</class>
     <class>mx.desarrollo.entidad.Alumno</class>
+    <class>mx.desarrollo.entidad.Profesores</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/Desarrollo?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
