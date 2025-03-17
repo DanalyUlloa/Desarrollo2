@@ -7,7 +7,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
     <h:head>
-        <title>Registro de  Profesores</title>
+        <title>Registro de Profesores</title>
         <h:outputStylesheet library="css" name="styles.css"/>
     </h:head>
 
@@ -31,42 +31,43 @@
             <!-- Cuadro gris donde se mostrará el formulario -->
             <div class="records-container">
                 <h:panelGroup id="registroProfesor">
+                    <!-- Mensaje inicial si el formulario no está activo -->
                     <h:outputText value="Selecciona una opción" styleClass="option-text" 
                                   rendered="#{not profesorBean.mostrarFormulario}"/>
 
-                    <!-- Formulario de profesor (visible solo si se activa) -->
-                    <h:panelGrid columns="2" cellpadding="5" 
-                                 rendered="#{profesorBean.mostrarFormulario}">
-                        <h:outputLabel for="numProfesor" value="Num. de Profesor(a):"/>
-                        <p:inputText id="numProfesor" value="#{profesorBean.profesor.numero}"/>
+                    <!-- Formulario de profesor -->
+                    <h:panelGroup rendered="#{profesorBean.mostrarFormulario}">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <h:outputLabel for="numProfesor" value="Num. de Profesor(a):"/>
+                            <p:inputText id="numProfesor" value="#{profesorBean.profesor.numero}"/>
 
-                        <h:outputLabel for="nombre" value="Nombres(s):"/>
-                        <p:inputText id="nombre" value="#{profesorBean.profesor.nombre}"/>
+                            <h:outputLabel for="nombre" value="Nombres(s):"/>
+                            <p:inputText id="nombre" value="#{profesorBean.profesor.nombre}"/>
 
-                        <h:outputLabel for="apellidoP" value="Apellido Paterno:"/>
-                        <p:inputText id="apellidoP" value="#{profesorBean.profesor.apellidoPaterno}"/>
+                            <h:outputLabel for="apellidoP" value="Apellido Paterno:"/>
+                            <p:inputText id="apellidoP" value="#{profesorBean.profesor.apellidoPaterno}"/>
 
-                        <h:outputLabel for="apellidoM" value="Apellido Materno:"/>
-                        <p:inputText id="apellidoM" value="#{profesorBean.profesor.apellidoMaterno}"/>
+                            <h:outputLabel for="apellidoM" value="Apellido Materno:"/>
+                            <p:inputText id="apellidoM" value="#{profesorBean.profesor.apellidoMaterno}"/>
 
-                        <h:outputLabel for="rfc" value="RFC:"/>
-                        <p:inputText id="rfc" value="#{profesorBean.profesor.rfc}"/>
+                            <h:outputLabel for="rfc" value="RFC:"/>
+                            <p:inputText id="rfc" value="#{profesorBean.profesor.rfc}"/>
 
-                        <p:message for="rfc" />
-                        <h:outputText value="Debe contener 13 dígitos" style="color:red; font-size:12px;" />
-                    </h:panelGrid>
+                            <p:message for="rfc" />
+                            <h:outputText value="Debe contener 13 dígitos" style="color:red; font-size:12px;" />
+                        </h:panelGrid>
 
-                    <!-- Botones dentro del cuadro gris -->
-                    <div class="button-container" 
-                         rendered="#{profesorBean.mostrarFormulario}">
-                        <p:commandButton value="Guardar" icon="pi pi-check"
-                                         action="#{profesorBean.guardarProfesor}"
-                                         update="registroProfesor"/>
+                        <!-- Botones dentro del cuadro gris -->
+                        <div class="button-container">
+                            <p:commandButton value="Guardar" icon="pi pi-check"
+                                             action="#{profesorBean.guardarProfesor}"
+                                             update="registroProfesor"/>
 
-                        <p:commandButton value="Atrás" icon="pi pi-arrow-left"
-                                         action="#{profesorBean.ocultarFormulario}"
-                                         update="registroProfesor" style="margin-left:10px;"/>
-                    </div>
+                            <p:commandButton value="Atrás" icon="pi pi-arrow-left"
+                                             action="#{profesorBean.ocultarFormulario}"
+                                             update="registroProfesor" style="margin-left:10px;"/>
+                        </div>
+                    </h:panelGroup>
                 </h:panelGroup>
             </div>
 
@@ -79,18 +80,15 @@
                                  update="registroProfesor"/>
 
                 <!-- Botón de consulta general -->
-                <h:commandButton action="#{profesorBean.consultar}" styleClass="action-button">
-                    <h:graphicImage library="images" name="consulta.png" styleClass="button-icon"/>
-                    <span class="button-text">Consulta General</span>
-                </h:commandButton>
+                <p:commandButton value="Consulta General" icon="pi pi-search"
+                                 action="#{profesorBean.consultar}"
+                                 styleClass="action-button"/>
 
                 <!-- Botón de eliminar profesor -->
-                <h:commandButton action="#{profesorBean.eliminar}" styleClass="action-button">
-                    <h:graphicImage library="images" name="eliminar.png" styleClass="button-icon"/>
-                    <span class="button-text">Eliminar Profesor</span>
-                </h:commandButton>
+                <p:commandButton value="Eliminar Profesor" icon="pi pi-trash"
+                                 action="#{profesorBean.eliminar}"
+                                 styleClass="action-button"/>
             </div>
         </div>
-
     </h:body>
 </html>
