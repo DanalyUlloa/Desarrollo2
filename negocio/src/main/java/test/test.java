@@ -6,6 +6,7 @@
 package test;
 
 import mx.desarrollo.entidad.Usuario;
+import mx.desarrollo.entidad.Profesores;
 import mx.desarrollo.integracion.ServiceFacadeLocator;
 
 /**
@@ -16,7 +17,7 @@ public class test {
     public static void main(String[] args) {
         Usuario usuario = new Usuario();
         
-        usuario = ServiceFacadeLocator.getInstanceFacadeUsuario().login("contra123","francisco.reyes.parra@uabc.edu.mx");
+        usuario = ServiceFacadeLocator.getInstanceFacadeUsuario().login("root","danaly.ulloa@uabc.edu.mx");
         
         if(usuario.getIdusuario() != null){
             System.out.println("Login exitoso con el correo: " + usuario.getCorreo());

@@ -7,6 +7,7 @@ package mx.desarrollo.integracion;
 
 import mx.desarrollo.DAO.AlumnoDAO;
 import mx.desarrollo.DAO.UsuarioDAO;
+import mx.desarrollo.DAO.ProfesoresDAO;
 
 
 /**
@@ -17,6 +18,17 @@ public class ServiceLocator {
     
     private static AlumnoDAO alumnoDAO;
     private static UsuarioDAO usuarioDAO;
+    private static ProfesoresDAO profesoresDAO;
+    
+    
+    public static ProfesoresDAO getInstanceProfesoresDAO() {
+        if (profesoresDAO == null) {
+            profesoresDAO = new ProfesoresDAO();
+            return profesoresDAO;
+        } else {
+            return profesoresDAO;
+        }
+    }
     /**
      * se crea la instancia para alumno DAO si esta no existe
      */
