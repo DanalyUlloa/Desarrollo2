@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <title>Asign aciones</title>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+
+    <h:body>
+        <!-- Barra superior -->
+        <h:panelGroup layout="block" styleClass="top-bar">
+            <h:link outcome="index?faces-redirect=true" styleClass="top-bar-link">
+                <h:graphicImage library="images" name="inicio.png" styleClass="top-bar-icon"/> 
+                <h:outputText value="Inicio"/>
+            </h:link>
+
+            <h:panelGroup layout="block" styleClass="asignaciones-tab">
+                <h:graphicImage library="images" name="asignacion.png" styleClass="top-bar-icon"/>
+                <h:outputText value="Asignaciones"/>
+            </h:panelGroup>
+        </h:panelGroup>
+
+        <!-- Contenedor de contenido -->
+        <h:panelGroup layout="block" styleClass="content-container">
+            <h1 class="title">Asignaciones</h1>
+
+            <!-- Cuadro gris para los registros -->
+            <h:panelGroup layout="block" styleClass="records-container">
+                <h:outputText value="Selecciona una opción" styleClass="option-text"/>
+            </h:panelGroup>
+
+            <!-- Contenedor de botones de acción -->
+            <h:panelGroup layout="block" styleClass="button-container">
+                <!-- Botón para agregar unidad a profesores -->
+                <p:commandButton value="Agregar Unidad a profesores" icon="pi pi-plus"
+                                 styleClass="action-button"
+                                 oncomplete="PF('dlgAgregarUnidad').show();"
+                                 update="dialogAgregarUnidad"/>
+
+                <!-- Botón de consulta general -->
+                <p:commandButton value="Consulta General" icon="pi pi-search"
+                                 styleClass="action-button"
+                                 action="#{asignacionBean.consultar}"/>
+
+                <!-- Botón de modificación de profesor -->
+                <p:commandButton value="Modificación de profesor(a)" icon="pi pi-pencil"
+                                 styleClass="action-button"
+                                 action="#{asignacionBean.modificar}"/>
+
+                <!-- Botón de eliminación de unidad -->
+                <p:commandButton value="Eliminar Unidad" icon="pi pi-trash"
+                                 styleClass="action-button"
+                                 action="#{asignacionBean.eliminar}"/>
+            </h:panelGroup>
+        </h:panelGroup>
+
+        <!-- Ventana Modal para Agregar Unidad a Profesores -->
+        <p:dialog id="dialogAgregarUnidad" widgetVar="dlgAgregarUnidad" header="Agregar Unidad a Profesores"
+                  modal="true" resizable="false" closable="true" width="600">
+
+            <h:form id="formAsignaciones">
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputLabel for="profesor" value="Profesor:"/>
+                    <p:inputText id="profesor" value="#{asignacionBean.asignacion.profesor}"/>
+
+                    <h:outputLabel for="unidad" value="Unidad de Aprendizaje:"/>
+                    <p:inputText id="unidad" value="#{asignacionBean.asignacion.unidad}"/>
+
+                    <h:outputLabel for="grupo" value="Grupo:"/>
+                    <p:inputText id="grupo" value="#{asignacionBean.asignacion.grupo}"/>
+                </h:panelGrid>
+
+                <br/>
+
+                <p:commandButton value="Guardar" icon="pi pi-check"
+                                 action="#{asignacionBean.guardarAsignacion}"
+                                 update="formAsignaciones dialogAgregarUnidad"
+                                 oncomplete="PF('dlgAgregarUnidad').hide();"/>
+
+                <p:commandButton value="Atrás" icon="pi pi-arrow-left"
+                                 onclick="PF('dlgAgregarUnidad').hide();" 
+                                 style="margin-left:10px;"/>
+            </h:form>
+        </p:dialog>
+
+    </h:body>
+</html>
