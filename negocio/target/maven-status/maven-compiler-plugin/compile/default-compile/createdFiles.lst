@@ -1,6 +1,8 @@
+mx\desarrollo\delegate\DelegateProfesor.class
 mx\desarrollo\entidad\Profesor.class
 mx\desarrollo\facade\FacadeAlumno.class
 mx\desarrollo\delegate\DelegateUsuario.class
+mx\desarrollo\facade\FacadeProfesor.class
 mx\desarrollo\facade\FacadeUsuario.class
 mx\desarrollo\negocio\ProfesorBean.class
 mx\desarrollo\delegate\DelegateAlumno.class

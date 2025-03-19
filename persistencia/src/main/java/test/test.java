@@ -7,7 +7,7 @@ package test;
 
 import java.util.ArrayList;
 import java.util.List;
-import mx.desarrollo.DAO.ProfesoresDAO;
+import mx.desarrollo.DAO.ProfesorDAO;
 import mx.desarrollo.DAO.UsuarioDAO;
 import mx.desarrollo.entidad.Usuario;
 
@@ -17,7 +17,7 @@ import mx.desarrollo.entidad.Usuario;
  */
 public class test {
     public static void main(String[] args) {
-        ProfesoresDAO profesoresDAO = new ProfesoresDAO();
+        ProfesorDAO profesoresDAO = new ProfesorDAO();
         
         List<Usuario> listaUsuarios = new ArrayList();
         UsuarioDAO usuarioDao = new UsuarioDAO();

@@ -5,7 +5,7 @@
  */
 package mx.desarrollo.DAO;
 
-import mx.desarrollo.entidad.Profesores;
+import mx.desarrollo.entidad.Profesor;
 import mx.desarrollo.persistencia.AbstractDAO;
 import java.util.List;
 import mx.desarrollo.persistencia.HibernateUtil;
@@ -14,11 +14,11 @@ import org.hibernate.Query;
  *
  * @author danal
  */
-public class ProfesoresDAO extends AbstractDAO<Integer, Profesores> {
+public class ProfesorDAO extends AbstractDAO<Integer, Profesor> {
     
-    public ProfesoresDAO(){
+    public ProfesorDAO(){
         super();
-        setEntityClass(Profesores.class);
+        setEntityClass(Profesor.class);
     }
     public List<Object[]> obtenerProfesorAsignaciones(){
         System.out.println("Profesor: \t \t Asignación");
@@ -45,9 +45,9 @@ public class ProfesoresDAO extends AbstractDAO<Integer, Profesores> {
         return result;
     }
 
-    public List<Profesores> buscarProfesorUnidad(String nombreUnidad){
+    public List<Profesor> buscarProfesorUnidad(String nombreUnidad){
         System.out.println("*** Profesor Por Unidad de Aprendizaje ***");
-        List<Profesores> profesor = null;
+        List<Profesor> profesor = null;
         
         try{
             HibernateUtil.getSession();
@@ -100,7 +100,7 @@ public class ProfesoresDAO extends AbstractDAO<Integer, Profesores> {
             HibernateUtil.getSession();
             HibernateUtil.beingTransaccion();
             
-            Profesores profesor = find(idProfesor);
+            Profesor profesor = find(idProfesor);
             if (profesor != null){
                 delete(profesor);
                 HibernateUtil.commitTransaction();

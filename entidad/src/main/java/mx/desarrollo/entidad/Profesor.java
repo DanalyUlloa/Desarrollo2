@@ -6,7 +6,9 @@
 package mx.desarrollo.entidad;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,24 +16,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author danal
  */
 @Entity
-@Table(name = "profesores")
+@Table(name = "profesor")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Profesores.findAll", query = "SELECT p FROM Profesores p")
-    , @NamedQuery(name = "Profesores.findByIdProfesor", query = "SELECT p FROM Profesores p WHERE p.idProfesor = :idProfesor")
-    , @NamedQuery(name = "Profesores.findByNombre", query = "SELECT p FROM Profesores p WHERE p.nombre = :nombre")
-    , @NamedQuery(name = "Profesores.findByApellidoPaterno", query = "SELECT p FROM Profesores p WHERE p.apellidoPaterno = :apellidoPaterno")
-    , @NamedQuery(name = "Profesores.findByApellidoMaterno", query = "SELECT p FROM Profesores p WHERE p.apellidoMaterno = :apellidoMaterno")
-    , @NamedQuery(name = "Profesores.findByRfc", query = "SELECT p FROM Profesores p WHERE p.rfc = :rfc")})
-public class Profesores implements Serializable {
+    @NamedQuery(name = "Profesor.findAll", query = "SELECT p FROM Profesor p")
+    , @NamedQuery(name = "Profesor.findByIdProfesor", query = "SELECT p FROM Profesor p WHERE p.idProfesor = :idProfesor")
+    , @NamedQuery(name = "Profesor.findByNombre", query = "SELECT p FROM Profesor p WHERE p.nombre = :nombre")
+    , @NamedQuery(name = "Profesor.findByApellidoPaterno", query = "SELECT p FROM Profesor p WHERE p.apellidoPaterno = :apellidoPaterno")
+    , @NamedQuery(name = "Profesor.findByApellidoMaterno", query = "SELECT p FROM Profesor p WHERE p.apellidoMaterno = :apellidoMaterno")
+    , @NamedQuery(name = "Profesor.findByRfc", query = "SELECT p FROM Profesor p WHERE p.rfc = :rfc")})
+public class Profesor implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -40,26 +44,28 @@ public class Profesores implements Serializable {
     @Column(name = "idProfesor")
     private Integer idProfesor;
     @Basic(optional = false)
-    @Column(name = "Nombre")
+    @Column(name = "nombre")
     private String nombre;
     @Basic(optional = false)
-    @Column(name = "ApellidoPaterno")
+    @Column(name = "apellidoPaterno")
     private String apellidoPaterno;
     @Basic(optional = false)
-    @Column(name = "ApellidoMaterno")
+    @Column(name = "apellidoMaterno")
     private String apellidoMaterno;
     @Basic(optional = false)
     @Column(name = "RFC")
     private String rfc;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idProfesor")
+    private Collection<Asignacion> asignacionCollection;
 
-    public Profesores() {
+    public Profesor() {
     }
 
-    public Profesores(Integer idProfesor) {
+    public Profesor(Integer idProfesor) {
         this.idProfesor = idProfesor;
     }
 
-    public Profesores(Integer idProfesor, String nombre, String apellidoPaterno, String apellidoMaterno, String rfc) {
+    public Profesor(Integer idProfesor, String nombre, String apellidoPaterno, String apellidoMaterno, String rfc) {
         this.idProfesor = idProfesor;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
@@ -107,6 +113,15 @@ public class Profesores implements Serializable {
         this.rfc = rfc;
     }
 
+    @XmlTransient
+    public Collection<Asignacion> getAsignacionCollection() {
+        return asignacionCollection;
+    }
+
+    public void setAsignacionCollection(Collection<Asignacion> asignacionCollection) {
+        this.asignacionCollection = asignacionCollection;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -117,10 +132,10 @@ public class Profesores implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Profesores)) {
+        if (!(object instanceof Profesor)) {
             return false;
         }
-        Profesores other = (Profesores) object;
+        Profesor other = (Profesor) object;
         if ((this.idProfesor == null && other.idProfesor != null) || (this.idProfesor != null && !this.idProfesor.equals(other.idProfesor))) {
             return false;
         }
@@ -129,7 +144,7 @@ public class Profesores implements Serializable {
 
     @Override
     public String toString() {
-        return "mx.desarrollo.entidad.Profesores[ idProfesor=" + idProfesor + " ]";
+        return "mx.desarrollo.entidad.Profesor[ idProfesor=" + idProfesor + " ]";
     }
     
 }

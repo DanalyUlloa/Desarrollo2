@@ -38,7 +38,7 @@
                     <!-- Formulario de profesor -->
                     <h:panelGroup rendered="#{profesorBean.mostrarFormulario}">
                         <h:panelGrid columns="2" cellpadding="5">
-                            <h:outputLabel for="numProfesor" value="Num. de Profesor(a):"/>
+                            <h:outputLabel for="idProfesor" value="Num. de Profesor(a):"/>
                             <p:inputText id="numProfesor" value="#{profesorBean.profesor.numero}"/>
 
                             <h:outputLabel for="nombre" value="Nombres(s):"/>
@@ -76,7 +76,7 @@
                 <!-- Botón de agregar profesor -->
                 <p:commandButton value="Agregar Profesor(a)" icon="pi pi-plus"
                                  styleClass="action-button"
-                                 action="#{profesorBean.mostrarFormulario}"
+                                 action="#{profesorBean.activarFormulario}"
                                  update="registroProfesor"/>
 
                 <!-- Botón de consulta general -->

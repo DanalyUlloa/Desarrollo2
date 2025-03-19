@@ -6,7 +6,7 @@
 package test;
 
 import mx.desarrollo.entidad.Usuario;
-import mx.desarrollo.entidad.Profesores;
+import mx.desarrollo.entidad.Profesor;
 import mx.desarrollo.integracion.ServiceFacadeLocator;
 
 /**

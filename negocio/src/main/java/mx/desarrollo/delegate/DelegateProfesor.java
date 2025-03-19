@@ -5,22 +5,22 @@
  */
 package mx.desarrollo.delegate;
 import java.util.List;
-import mx.desarrollo.entidad.Profesores;
+import mx.desarrollo.entidad.Profesor;
 import mx.desarrollo.integracion.ServiceLocator;
 
 /**
  *
  * @author danal
  */
-public class DelegateProfesores {
+public class DelegateProfesor {
     
-    public Profesores altaProfesor(String nombre, String apellidoPaterno, String apellidoMaterno, String rfc) {
+    public Profesor altaProfesor(String nombre, String apellidoPaterno, String apellidoMaterno, String rfc) {
         validarNombre(nombre);
         validarApellidoPaterno(apellidoPaterno);
         validarApellidoMaterno(apellidoMaterno);
         validarRfc(rfc);
 
-        Profesores profesor = new Profesores();
+        Profesor profesor = new Profesor();
         profesor.setNombre(nombre);
         profesor.setApellidoPaterno(apellidoPaterno);
         profesor.setRfc(rfc);
@@ -28,16 +28,16 @@ public class DelegateProfesores {
         return profesor;
     }
     
-    public void guardarProfesor(Profesores profesor) {
-        ServiceLocator.getInstanceProfesoresDAO().save(profesor);
+    public void guardarProfesor(Profesor profesor) {
+        ServiceLocator.getInstanceProfesorDAO().save(profesor);
     }
     
-    public List<Profesores> mostrarProfesores() {
-        return ServiceLocator.getInstanceProfesoresDAO().findAll();
+    public List<Profesor> mostrarProfesores() {
+        return ServiceLocator.getInstanceProfesorDAO().findAll();
     }
     
     public void eliminarProfesor(int idProfesor) {
-        ServiceLocator.getInstanceProfesoresDAO().eliminarProfesorId(idProfesor);
+        ServiceLocator.getInstanceProfesorDAO().eliminarProfesorId(idProfesor);
     }
     
     private void validarNombre(String nombre) {

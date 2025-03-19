@@ -22,6 +22,7 @@ import mx.desarrollo.helper.LoginHelper;
 @ManagedBean(name = "loginUI")
 @SessionScoped
 public class LoginBeanUI implements Serializable{
+    
     private LoginHelper loginHelper;
     private Usuario usuario;
     

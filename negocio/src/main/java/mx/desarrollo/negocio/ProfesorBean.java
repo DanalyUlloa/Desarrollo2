@@ -37,10 +37,10 @@ public class ProfesorBean implements Serializable {
     }
 
     // Método para mostrar el formulario
-    public void mostrarFormulario() {
-        System.out.println("Mostrando formulario...");
-        this.mostrarFormulario = true;
-    }
+    public void activarFormulario() {
+    System.out.println("Mostrando formulario...");
+    this.mostrarFormulario = true;
+}
 
     // Método para ocultar el formulario
     public void ocultarFormulario() {
